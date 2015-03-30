@@ -50,7 +50,6 @@ public class Rechner implements Calculator {
 		log.finest("Finest");
 		
 	}
-	
 	private static void setuplogger(){
 		final InputStream is = Rechner.class
 				.getResourceAsStream("log.properties");
