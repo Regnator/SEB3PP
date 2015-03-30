@@ -44,17 +44,22 @@ public class Rechner implements Calculator {
 	public static void main(String[] args){
 		setuplogger();
 		log.info("Info");
+		log.warning("Warnung");
+		log.fine("Fine");
+		log.finer("Finer");
+		log.finest("Finest");
 		
 	}
-	@SuppressWarnings("static-access")
+	
 	private static void setuplogger(){
-		InputStream InputStream = Rechner.class.getResourceAsStream("loggingg.properties");
+		final InputStream is = Rechner.class
+				.getResourceAsStream("log.properties");
 				try{
-					LogManager.getLogManager().readConfiguration(InputStream);
+					LogManager.getLogManager().readConfiguration(is);
 				}
 				catch(final IOException e){
-					log.getAnonymousLogger().severe("Could not load deafult logging.properties file");
-					log.getAnonymousLogger().severe(e.getMessage());
+					Logger.getAnonymousLogger().severe("Could not load deafult logging.properties file");
+					Logger.getAnonymousLogger().severe(e.getMessage());
 				}
 	}
 }
