@@ -65,7 +65,7 @@ public class Rechner implements Calculator {
 				try{
 					LogManager.getLogManager().readConfiguration(is);
 					
-					Handler fileHandler = new FileHandler("PPlogs.log",1000,5);
+					Handler fileHandler = new FileHandler("PPlogs.log",100,5);
 					fileHandler.setFormatter(new SimpleFormatter());
 					log.addHandler(fileHandler);
 				}
